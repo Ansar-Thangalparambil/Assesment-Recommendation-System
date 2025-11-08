@@ -139,7 +139,7 @@
 ## **✅ How to Run Locally**
    
       1. Clone the Repository
-         git clone https://github.com/Ansar_Thangalparambil/Assessment-Recommendation-System.git
+         git clone https://github.com/Ansar-Thangalparambil/Assessment-Recommendation-System.git
         cd Assessment-Recommendation-System
       2. Create Virtual Environment
         python -m venv .venv
@@ -163,6 +163,7 @@
       
 
     
+
 
 
 
