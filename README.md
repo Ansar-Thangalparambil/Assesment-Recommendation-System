@@ -153,7 +153,7 @@ Displays recommendations in a dynamic table
         cd frontend
         python -m http.server 5500
 
-**✅ Author**
+**👨‍💻 Author**
 
 **Ansar Thangalparambil**
 
@@ -163,5 +163,6 @@ Displays recommendations in a dynamic table
       
 
     
+
 
 
