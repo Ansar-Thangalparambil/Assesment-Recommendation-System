@@ -134,6 +134,14 @@
     ├── .venv/
     ├── README.md
     └── recommendation_engine.ipynb
+## Architecture Overview
+
+          ┌──────────────────┐       ┌──────────────────────────┐
+    │    Frontend       │       │        FastAPI Backend    │
+    │ (HTML/CSS/JS)     │──────▶│  /recommend endpoint      │
+    └──────────────────┘       │  TF-IDF Vectorizer         │
+                               │  Cosine Similarity Engine   │
+                               └──────────────────────────┘
 
   
 ## **✅ How to Run Locally**
@@ -163,6 +171,7 @@
       
 
     
+
 
 
 
