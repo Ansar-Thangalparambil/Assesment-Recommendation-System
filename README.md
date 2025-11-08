@@ -29,7 +29,7 @@
   User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
 
 ## **✅ Project Workflow**
-    **1. Data Preparation**
+    1. Data Preparation
   
     Crawled SHL Product Catalog
     
@@ -43,7 +43,7 @@
   
     SHL_Recommendations.csv
   
-    **2. Model Pipeline**
+    2. Model Pipeline
   
     Used TF-IDF Vectorizer to convert assessment descriptions into embeddings
     
@@ -55,7 +55,7 @@
     
     vectors.pkl
   
-    **3. Backend (FastAPI)**
+    3. Backend (FastAPI)
 
     Endpoints:
     
@@ -67,7 +67,7 @@
     
     Lightweight, fast server using Uvicorn
   
-    **4. Frontend**
+    4. Frontend
   
     Simple and clean UI
     
@@ -163,6 +163,7 @@
       
 
     
+
 
 
 
