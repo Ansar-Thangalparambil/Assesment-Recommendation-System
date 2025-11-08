@@ -1,112 +1,163 @@
-project:
-  name: "SHL Assessment Recommendation System"
-  description: >
-    A GenAI-powered recommendation engine that suggests the most relevant SHL individual
-    assessments based on natural language job descriptions or queries. The system helps
-    hiring managers find suitable SHL assessments instantly.
+SHL Assessment Recommendation System
 
-features:
-  - Accepts natural language job descriptions or skill-based queries
-  - Recommends top 5–10 relevant SHL individual assessments
-  - Provides assessment name, SHL catalog URL, and similarity score
-  - Balances recommendations across technical and behavioral categories
-  - REST API built with FastAPI
-  - Simple frontend using HTML, CSS, JavaScript
-  - Meets all SHL problem requirements
+A GenAI-powered engine that recommends the most relevant SHL individual assessments based on natural-language job descriptions or queries.
+This system enables hiring managers and recruiters to quickly identify the right SHL tests without manually searching the SHL catalog.
 
-workflow:
-  data_preparation:
-    - Crawl SHL product catalog
-    - Clean data and extract individual test solutions
-    - Remove pre-packaged job solutions
-    - Store datasets in CSV format
+✅ Features
 
-  model_pipeline:
-    vectorization: "TF-IDF Vectorizer"
-    similarity_metric: "Cosine Similarity"
-    saved_files:
-      - vectorizer.pkl
-      - vectors.pkl
+Accepts natural-language job descriptions, skills, or URLs
 
-  query_process:
-    - Convert query to TF-IDF vector
-    - Compute similarity scores with catalog vectors
-    - Select top 10 assessments
-    - Return structured JSON response
+Recommends 5–10 relevant SHL individual assessments
 
-tech_stack:
-  backend: FastAPI
-  machine_learning: Scikit-learn (TF-IDF, cosine similarity)
-  frontend: [HTML, CSS, JavaScript]
-  storage: CSV
-  deployment: ["Render", "Railway", "Vercel (optional)"]
+Each result includes:
 
-api:
-  base_url: "http://127.0.0.1:8000"
-  endpoints:
-    - route: "/health"
-      method: GET
-      description: "Check API status"
-      sample_response:
-        status: "ok"
+Assessment Name
 
-    - route: "/recommend"
-      method: POST
-      description: "Get SHL assessment recommendations"
-      request_body:
-        query: "Looking for a Java developer who collaborates well"
-      sample_response:
-        results:
-          - assessment_url: "https://www.shl.com/.../java-8-new/"
-            score: 0.8703
+SHL Catalog URL
 
-frontend:
-  files:
-    - index.html
-    - script.js
-    - style.css
-  features:
-    - Input form for query
-    - Results table display
-    - Clean layout
-    - Basic interactive UI
+Similarity Score
 
-repo_structure:
-  - backend/
-  - frontend/
-  - assessments_catalogue.csv
-  - SHL_Recommendations.csv
-  - recommendation_engine.ipynb
-  - README.md
-  - .gitignore
+Balanced recommendations across technical and behavioral categories
 
-evaluation:
-  performance_iterations:
-    - version: "V1"
-      technique: "Keyword Search"
-      recall10: "Low"
-      status: "Rejected"
+REST API powered by FastAPI
 
-    - version: "V2"
-      technique: "TF-IDF + Cosine Similarity"
-      recall10: "Improved"
-      status: "Accepted"
+Interactive frontend using HTML, CSS, and JavaScript
 
-    - version: "V3"
-      technique: "Cleaned catalog + noise removal"
-      recall10: "Best"
-      status: "Final Model"
+Fully meets all problem requirements in SHL's GenAI Task Specification
 
-installation:
-  steps:
-    - "git clone https://github.com/Ansar-Thangalparambil/Assessment-Recommendation-System.git"
-    - "cd Assessment-Recommendation-System"
-    - "pip install -r requirements.txt"
-    - "cd backend && uvicorn api:app --reload"
-    - "cd frontend && python -m http.server 5500"
-  access_url: "http://127.0.0.1:5500"
+✅ System Architecture
+User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
+
+✅ Project Workflow
+1. Data Preparation
+
+Crawled SHL Product Catalog
+
+Cleaned dataset and extracted individual test solutions only
+
+Removed pre-packaged job solutions
+
+Stored data in:
+
+assessments_catalogue.csv
+
+SHL_Recommendations.csv
+
+2. Model Pipeline
+
+Used TF-IDF Vectorizer to convert assessment descriptions into embeddings
+
+Calculated similarities using Cosine Similarity
+
+Saved trained components:
+
+vectorizer.pkl
+
+vectors.pkl
+
+3. Backend (FastAPI)
+
+Endpoints:
+
+/health → API status check
+
+/recommend → accepts text query, returns JSON results
+
+CORS enabled for frontend compatibility
+
+Lightweight, fast server using Uvicorn
+
+4. Frontend
+
+Simple and clean UI
+
+Built using:
+
+HTML (structure)
+
+CSS (styling)
+
+JavaScript (API fetch + rendering)
+
+Displays recommendations in a dynamic table
 
 
-author:
-  name: "Ansar Thangalparambil"
-  role: "GenAI Developer & ML Enthusiast"
+✅ API Documentation
+1. Health Check
+
+  GET /health
+
+  Response
+  
+  { "status": "ok" }
+
+2. Recommendation Endpoint
+   
+  POST /recommend
+
+  Request Body
+ 
+    {
+    "query": "java developer proficient in teamwork"
+    }
+  
+    Sample Response
+    {
+    "results": [
+      {
+        "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new/",
+        "score": 0.8703
+      },
+      {
+        "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level-new/",
+        "score": 0.5007
+      }
+    ]
+    }
+
+✅ Folder Structure
+
+    📦 Assessment-Recommendation-System
+  │
+  ├── backend/
+  │   ├── api.py
+  │   ├── vectorizer.pkl
+  │   ├── vectors.pkl
+  │   ├── assessments_catalogue.csv
+  │   └── SHL_Recommendations.csv
+  │
+  ├── frontend/
+  │   ├── index.html
+  │   ├── style.css
+  │   └── script.js
+  │
+  ├── .venv/
+  ├── README.md
+  └── recommendation_engine.ipynb
+  ✅ How to Run Locally
+   
+    1. Clone the Repository
+       git clone https://github.com/Ansar_Thangalparambil/Assessment-Recommendation-System.git
+      cd Assessment-Recommendation-System
+    2. Create Virtual Environment
+      python -m venv .venv
+      source .venv/bin/activate     # Mac/Linux
+      .venv\Scripts\activate        # Windows
+    3. Install Dependencies
+        pip install -r requirements.txt
+    4. Start Backend
+        uvicorn api:app --reload
+    5. Start Frontend
+        cd frontend
+        python -m http.server 5500
+
+✅ Author
+
+Ansar Thangalparambil
+
+
+      
+
+      
+
+    
