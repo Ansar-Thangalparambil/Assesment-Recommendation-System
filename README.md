@@ -25,95 +25,95 @@
   
   Fully meets all problem requirements in SHL's GenAI Task Specification
 
-##**✅ System Architecture**
+## **✅ System Architecture**
   User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
 
-##**✅ Project Workflow**
-  **1. Data Preparation**
+## **✅ Project Workflow**
+    **1. Data Preparation**
   
-  Crawled SHL Product Catalog
-  
-  Cleaned dataset and extracted individual test solutions only
-  
-  Removed pre-packaged job solutions
-  
-  Stored data in:
-  
-  assessments_catalogue.csv
-
-  SHL_Recommendations.csv
-
-  **2. Model Pipeline**
-
-  Used TF-IDF Vectorizer to convert assessment descriptions into embeddings
-  
-  Calculated similarities using Cosine Similarity
-  
-  Saved trained components:
-  
-  vectorizer.pkl
-  
-  vectors.pkl
-
-  **3. Backend (FastAPI)**
-
-  Endpoints:
-  
-  /health → API status check
-  
-  /recommend → accepts text query, returns JSON results
-  
-  CORS enabled for frontend compatibility
-  
-  Lightweight, fast server using Uvicorn
-
-  **4. Frontend**
-
-  Simple and clean UI
-  
-  Built using:
-  
-  HTML (structure)
-  
-  CSS (styling)
-  
-  JavaScript (API fetch + rendering)
-  
-  Displays recommendations in a dynamic table
-
-
-##**✅ API Documentation**
-  1. Health Check
-  
-    GET /health
-  
-    Response
+    Crawled SHL Product Catalog
     
-    { "status": "ok" }
+    Cleaned dataset and extracted individual test solutions only
+    
+    Removed pre-packaged job solutions
+    
+    Stored data in:
+    
+    assessments_catalogue.csv
   
-  2. Recommendation Endpoint
+    SHL_Recommendations.csv
+  
+    **2. Model Pipeline**
+  
+    Used TF-IDF Vectorizer to convert assessment descriptions into embeddings
+    
+    Calculated similarities using Cosine Similarity
+    
+    Saved trained components:
+    
+    vectorizer.pkl
+    
+    vectors.pkl
+  
+    **3. Backend (FastAPI)**
+
+    Endpoints:
+    
+    /health → API status check
+    
+    /recommend → accepts text query, returns JSON results
+    
+    CORS enabled for frontend compatibility
+    
+    Lightweight, fast server using Uvicorn
+  
+    **4. Frontend**
+  
+    Simple and clean UI
+    
+    Built using:
+    
+    HTML (structure)
+    
+    CSS (styling)
+    
+    JavaScript (API fetch + rendering)
+    
+    Displays recommendations in a dynamic table
+
+
+## **✅ API Documentation**
+    1. Health Check
+    
+      GET /health
+    
+      Response
+      
+      { "status": "ok" }
+    
+    2. Recommendation Endpoint
+       
+      POST /recommend
+    
+      Request Body
      
-    POST /recommend
-  
-    Request Body
-   
-      {
-      "query": "java developer proficient in teamwork"
-      }
-    
-      Sample Response
-      {
-      "results": [
         {
-          "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new/",
-          "score": 0.8703
-        },
-        {
-          "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level-new/",
-          "score": 0.5007
+        "query": "java developer proficient in teamwork"
         }
-      ]
-      }
+      
+        Sample Response
+        {
+        "results": [
+          {
+            "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new/",
+            "score": 0.8703
+          },
+          {
+            "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level-new/",
+            "score": 0.5007
+          }
+        ]
+        }
 
 ## **📁 Folder Structure**
 
@@ -163,6 +163,7 @@
       
 
     
+
 
 
 
