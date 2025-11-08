@@ -1,9 +1,9 @@
-SHL Assessment Recommendation System
+**SHL Assessment Recommendation System**
 
 A GenAI-powered engine that recommends the most relevant SHL individual assessments based on natural-language job descriptions or queries.
 This system enables hiring managers and recruiters to quickly identify the right SHL tests without manually searching the SHL catalog.
 
-✅ Features
+**✅ Features**
 
 Accepts natural-language job descriptions, skills, or URLs
 
@@ -25,11 +25,11 @@ Interactive frontend using HTML, CSS, and JavaScript
 
 Fully meets all problem requirements in SHL's GenAI Task Specification
 
-✅ System Architecture
+**✅ System Architecture**
 User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
 
-✅ Project Workflow
-1. Data Preparation
+**✅ Project Workflow**
+**1. Data Preparation**
 
 Crawled SHL Product Catalog
 
@@ -43,7 +43,7 @@ assessments_catalogue.csv
 
 SHL_Recommendations.csv
 
-2. Model Pipeline
+**2. Model Pipeline**
 
 Used TF-IDF Vectorizer to convert assessment descriptions into embeddings
 
@@ -55,7 +55,7 @@ vectorizer.pkl
 
 vectors.pkl
 
-3. Backend (FastAPI)
+**3. Backend (FastAPI)**
 
 Endpoints:
 
@@ -67,7 +67,7 @@ CORS enabled for frontend compatibility
 
 Lightweight, fast server using Uvicorn
 
-4. Frontend
+**4. Frontend**
 
 Simple and clean UI
 
@@ -82,7 +82,7 @@ JavaScript (API fetch + rendering)
 Displays recommendations in a dynamic table
 
 
-✅ API Documentation
+**✅ API Documentation**
 1. Health Check
 
   GET /health
@@ -115,7 +115,7 @@ Displays recommendations in a dynamic table
     ]
     }
 
-✅ Folder Structure
+**✅ Folder Structure**
 
     📦 Assessment-Recommendation-System
   │
@@ -134,7 +134,9 @@ Displays recommendations in a dynamic table
   ├── .venv/
   ├── README.md
   └── recommendation_engine.ipynb
-  ✅ How to Run Locally
+
+  
+**  ✅ How to Run Locally**
    
     1. Clone the Repository
        git clone https://github.com/Ansar_Thangalparambil/Assessment-Recommendation-System.git
@@ -151,9 +153,9 @@ Displays recommendations in a dynamic table
         cd frontend
         python -m http.server 5500
 
-✅ Author
+**✅ Author**
 
-Ansar Thangalparambil
+**Ansar Thangalparambil*****
 
 
       
@@ -161,3 +163,4 @@ Ansar Thangalparambil
       
 
     
+
