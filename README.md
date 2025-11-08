@@ -115,7 +115,7 @@ Displays recommendations in a dynamic table
     ]
     }
 
-**✅ Folder Structure**
+**📁 Folder Structure**
 
     📦 Assessment-Recommendation-System
   │
@@ -136,7 +136,7 @@ Displays recommendations in a dynamic table
   └── recommendation_engine.ipynb
 
   
-**  ✅ How to Run Locally**
+   **✅ How to Run Locally**
    
     1. Clone the Repository
        git clone https://github.com/Ansar_Thangalparambil/Assessment-Recommendation-System.git
@@ -163,6 +163,7 @@ Displays recommendations in a dynamic table
       
 
     
+
 
 
 
