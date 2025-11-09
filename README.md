@@ -26,7 +26,16 @@
   Fully meets all problem requirements in SHL's GenAI Task Specification
 
 ## **✅ System Architecture**
-  User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
+    User Query → FastAPI Backend → TF-IDF Vectorizer → Cosine Similarity → Top-K Scores → Frontend Display
+    
+## Architecture Overview
+
+          ┌──────────────────┐       ┌──────────────────────────┐
+    │    Frontend       │       │        FastAPI Backend    │
+    │ (HTML/CSS/JS)     │──────▶│  /recommend endpoint      │
+    └──────────────────┘       │  TF-IDF Vectorizer         │
+                               │  Cosine Similarity Engine   │
+                               └──────────────────────────┘
 
 ## **✅ Project Workflow**
     1. Data Preparation
@@ -134,15 +143,6 @@
     ├── .venv/
     ├── README.md
     └── recommendation_engine.ipynb
-## Architecture Overview
-
-          ┌──────────────────┐       ┌──────────────────────────┐
-    │    Frontend       │       │        FastAPI Backend    │
-    │ (HTML/CSS/JS)     │──────▶│  /recommend endpoint      │
-    └──────────────────┘       │  TF-IDF Vectorizer         │
-                               │  Cosine Similarity Engine   │
-                               └──────────────────────────┘
-
   
 ## **✅ How to Run Locally**
    
@@ -171,6 +171,7 @@
       
 
     
+
 
 
 
