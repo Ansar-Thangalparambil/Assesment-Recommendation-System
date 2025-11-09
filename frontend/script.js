@@ -10,7 +10,8 @@ async function getRecommendations() {
     responseBox.innerHTML = "<p>Loading...</p>";
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/recommend", {
+        // ✅ UPDATE: Use your Render backend URL
+        const response = await fetch("https://assesment-recommendation-system-5.onrender.com/recommend", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -27,11 +28,14 @@ async function getRecommendations() {
 
         if (data.results && data.results.length > 0) {
             let table = `
-                <table border="1" cellpadding="8">
-                    <tr>
-                        <th>Assessment URL</th>
-                        <th>Score</th>
-                    </tr>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Assessment URL</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
             `;
 
             data.results.forEach(item => {
@@ -43,7 +47,11 @@ async function getRecommendations() {
                 `;
             });
 
-            table += "</table>";
+            table += `
+                    </tbody>
+                </table>
+            `;
+
             responseBox.innerHTML = table;
         } else {
             responseBox.innerHTML = "<p>No results found</p>";
