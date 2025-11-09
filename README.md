@@ -161,6 +161,16 @@
           cd frontend
           python -m http.server 5500
 
+# Deployment  URL 
+
+https://assesment-recommendation-system-frontend.onrender.com/
+
+
+## Screenshots 
+  <img width="1898" height="899" alt="image" src="https://github.com/user-attachments/assets/405ef083-0290-42f5-a9ed-87bdc522c4fc" />
+  <img width="1854" height="901" alt="image" src="https://github.com/user-attachments/assets/8d2ba038-a26e-43c7-98ff-ac47cd1570c4" />
+
+
 ## **👨‍💻 Author**
 
   **Ansar Thangalparambil**
@@ -171,6 +181,7 @@
       
 
     
+
 
 
 
